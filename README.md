@@ -3,7 +3,7 @@ C and Python programs that modify input files.
 
 ## volume.c
 ### Inputs:
-Markup :   
+ Markup :   
 - Command-line arguments:
    1. argc: An integer representing the number of command-line arguments.
    2. argv: An array of strings representing the command-line arguments.
