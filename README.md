@@ -4,7 +4,10 @@ C and Python programs that modify input files.
 ## volume.c
 
 ###  Inputs:
-The program expects three command-line arguments in the following order:
+1. **Command-line arguments:**
+   - `argc`: An integer representing the number of command-line arguments.
+   - `argv`: An array of strings representing the command-line arguments.
+   The program expects three command-line arguments in the following order:
    1. ```input.wav```: The name of the input audio file in WAV format.
    2. ```output.wav```: The name of the output audio file where the modified audio will be saved.
    3. ```factor```: A floating-point number representing the scaling factor for modifying the volume.
@@ -23,7 +26,10 @@ The program expects three command-line arguments in the following order:
 ## mybreak.c
 
 ### Inputs:
-The program expects three command-line arguments in the following order:
+1. **Command-line arguments:**
+   - `argc`: An integer representing the number of command-line arguments.
+   - `argv`: An array of strings representing the command-line arguments.
+   The program expects three command-line arguments in the following order:
    1. ```<source_file>```: The name of the source binary file that needs to be broken into chunks.
    2. ```<break_prefix>```: The prefix to be used for the names of the output chunk files.
    3. ```<size of each chunk in 1K>```: The size of each chunk in kilobytes.
@@ -53,10 +59,10 @@ The program expects three command-line arguments in the following order:
    - `argv`: An array of strings representing the command-line arguments.
 
    The program expects five command-line arguments in the following order:
-   - `<target_file>`: The name of the target binary file that needs to be reconstructed.
-   - `<break_prefix>`: The prefix used for the names of the chunk files produced by `mybreak`.
-   - `<chunk_size in 1K>`: The size of each chunk in kilobytes (used during the chunking process).
-   - `<number_of_chunks>`: The total number of chunks that need to be read and reconstructed.
+   1. `<target_file>`: The name of the target binary file that needs to be reconstructed.
+   2. `<break_prefix>`: The prefix used for the names of the chunk files produced by `mybreak`.
+   3. `<chunk_size in 1K>`: The size of each chunk in kilobytes (used during the chunking process).
+   4. `<number_of_chunks>`: The total number of chunks that need to be read and reconstructed.
 
 ### Outputs:
 
