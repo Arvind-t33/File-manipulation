@@ -25,9 +25,6 @@ The program expects three command-line arguments in the following order:
    2. ```<break_prefix>```: The prefix to be used for the names of the output chunk files.
    3. ```<size of each chunk in 1K>```: The size of each chunk in kilobytes.
 
-ChatGPT
-This C program, named mybreak, is designed to break a binary file into chunks of a specified size. Below is an explanation of the inputs and outputs of the program:
-
 ### Outputs:
 - Printed Messages:
    - If the number of command-line arguments is not 4, the program prints a usage message indicating the correct format and exits with a    return code of 1.
