@@ -26,15 +26,15 @@ The program expects three command-line arguments in the following order:
    3. ```<size of each chunk in 1K>```: The size of each chunk in kilobytes.
 
 ### Outputs:
-- Printed Messages:
+1. Printed Messages:
    - If the number of command-line arguments is not 4, the program prints a usage message indicating the correct format and exits with a    return code of 1.
-- File Chunk Creation:
+2. File Chunk Creation:
    - The program opens the source binary file ```<source_file>``` for reading ```f = fopen(argv[1], "r")```.
    - It then enters a loop that iteratively reads chunks from the source file and writes them to new files with names derived from the       ```<break_prefix>``` and a numeric index.
    - Each output file is named with the pattern ```<break_prefix>.<index>```.
    - The chunk size is determined by multiplying the specified size (in kilobytes) by 1024.
-- Printed Progress Messages:
+3. Printed Progress Messages:
    - During the chunk creation process, the program prints messages indicating the start of each new chunk file.
-- File Closure and Memory Deallocation:
+4. File Closure and Memory Deallocation:
    - The program closes the source file (```fclose(f)```) and each output chunk file (```fclose(tf)```) after writing the chunks.
    - It frees dynamically allocated memory for the file name (```free(fname)```) for each iteration of the loop.
