@@ -12,3 +12,9 @@ C and Python programs that modify input files.
   2. output.wav: The name of the output audio file where the modified audio will be saved.
   3. factor: A floating-point number representing the scaling factor for modifying the volume.
 
+ Markup : - Command-line arguments:
+              1. argc: An integer representing the number of command-line arguments.
+              2. argv: An array of strings representing the command-line arguments.
+          -  The program expects three command-line arguments in the following order:
+              1. input.wave
+
