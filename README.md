@@ -25,6 +25,8 @@ The program expects three command-line arguments in the following order:
    2. ```<break_prefix>```: The prefix to be used for the names of the output chunk files.
    3. ```<size of each chunk in 1K>```: The size of each chunk in kilobytes.
 
+   Note: The program assumes that the source file is a binary file and may not work correctly for text files or files in other formats. It also assumes that the file is large enough to produce multiple chunks based on the specified size.
+
 ### Outputs:
 1. Printed Messages:
    - If the number of command-line arguments is not 4, the program prints a usage message indicating the correct format and exits with a    return code of 1.
@@ -38,3 +40,4 @@ The program expects three command-line arguments in the following order:
 4. File Closure and Memory Deallocation:
    - The program closes the source file (```fclose(f)```) and each output chunk file (```fclose(tf)```) after writing the chunks.
    - It frees dynamically allocated memory for the file name (```free(fname)```) for each iteration of the loop.
+  
