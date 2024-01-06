@@ -2,11 +2,13 @@
 C and Python programs that modify input files.
 
 ## volume.c
+
 ###  Inputs:
 The program expects three command-line arguments in the following order:
    1. ```input.wav```: The name of the input audio file in WAV format.
    2. ```output.wav```: The name of the output audio file where the modified audio will be saved.
    3. ```factor```: A floating-point number representing the scaling factor for modifying the volume.
+      
 ###  Outputs:
 1. Printed Usage Message:
    - If the number of command-line arguments is not 4, the program prints a usage message indicating the correct format and exits with a return code of 1.
@@ -19,6 +21,7 @@ The program expects three command-line arguments in the following order:
    - The modified audio samples are then written to the WAV file specified by output.wav.
 
 ## mybreak.c
+
 ### Inputs:
 The program expects three command-line arguments in the following order:
    1. ```<source_file>```: The name of the source binary file that needs to be broken into chunks.
@@ -40,4 +43,45 @@ The program expects three command-line arguments in the following order:
 4. File Closure and Memory Deallocation:
    - The program closes the source file (```fclose(f)```) and each output chunk file (```fclose(tf)```) after writing the chunks.
    - It frees dynamically allocated memory for the file name (```free(fname)```) for each iteration of the loop.
-  
+
+## myheal.c 
+
+### Inputs:
+
+1. **Command-line arguments:**
+   - `argc`: An integer representing the number of command-line arguments.
+   - `argv`: An array of strings representing the command-line arguments.
+
+   The program expects five command-line arguments in the following order:
+   - `<target_file>`: The name of the target binary file that needs to be reconstructed.
+   - `<break_prefix>`: The prefix used for the names of the chunk files produced by `mybreak`.
+   - `<chunk_size in 1K>`: The size of each chunk in kilobytes (used during the chunking process).
+   - `<number_of_chunks>`: The total number of chunks that need to be read and reconstructed.
+
+### Outputs:
+
+1. **Printed Messages:**
+   - If the number of command-line arguments is not 5, the program prints a usage message indicating the correct format and exits with a return code of 1.
+
+2. **File Reconstruction:**
+   - The program opens the target binary file (`<target_file>`) for writing.
+   - It enters a loop that iteratively reads chunks from the chunk files and writes them to the target binary file.
+   - The loop continues for the specified number of chunks, and each chunk file is named with the pattern `<break_prefix>.<index>`.
+
+3. **Printed Progress Messages:**
+   - During the reconstruction process, the program prints messages indicating the chunks being processed.
+
+4. **File Size Matching:**
+   - The program checks if the size of each chunk matches the expected chunk size, except for the last chunk which may have a different size.
+
+5. **Error Handling:**
+   - The program checks for errors during file opening, reading, writing, and memory allocation.
+   - It prints appropriate error messages and exits with a return code of 1 if an error occurs.
+
+6. **Completion Message:**
+   - Once all chunks are processed and the target file is reconstructed, the program prints a completion message indicating the number of chunks processed and the target file name.
+
+7. **Return Code:**
+   - The program returns a code of 1 at the end, indicating that it has finished execution.
+
+
